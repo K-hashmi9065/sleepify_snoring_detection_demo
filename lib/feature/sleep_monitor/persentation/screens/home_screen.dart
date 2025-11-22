@@ -48,7 +48,7 @@ class HomeScreen extends ConsumerWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         onTap: (index) {
-          if (index == 1) context.go('/settings');
+          if (index == 1) context.go('/mesh-wave');
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
