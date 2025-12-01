@@ -1,8 +1,10 @@
 import 'package:go_router/go_router.dart';
 
 import '../feature/sleep_monitor/persentation/screens/home_screen.dart';
+import '../feature/sleep_monitor/persentation/screens/jounral.dart';
 import '../feature/sleep_monitor/persentation/screens/mesh_wave.dart';
 import '../feature/sleep_monitor/persentation/screens/permission_screen.dart';
+import '../feature/sleep_monitor/persentation/screens/report.dart';
 import '../feature/sleep_monitor/persentation/screens/settings_screen.dart';
 import '../feature/sleep_monitor/persentation/screens/sleep_summary_screen.dart';
 import '../feature/sleep_monitor/persentation/screens/sleep_tracking_screen.dart';
@@ -10,7 +12,7 @@ import '../feature/sleep_monitor/persentation/screens/splash_screen.dart';
 
 class AppRouter {
   static final router = GoRouter(
-    initialLocation: '/',
+    initialLocation: '/home',
     routes: [
       GoRoute(path: '/', builder: (context, _) => const SplashScreen()),
       GoRoute(path: '/home', builder: (context, _) => const HomeScreen()),
@@ -34,6 +36,8 @@ class AppRouter {
         path: '/mesh-wave',
         builder: (context, _) => const MeshWaveScreen(),
       ),
+      GoRoute(path: '/report', builder: (context, _) => const ReportScreen()),
+      GoRoute(path: '/journal', builder: (context, _) => const JournalScreen()),
     ],
   );
 }

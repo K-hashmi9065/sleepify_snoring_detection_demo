@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 
 import '../provider/sleep_provider.dart';
 
-
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -28,15 +27,24 @@ class HomeScreen extends ConsumerWidget {
             ),
             SizedBox(height: 24.h),
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: Padding(
                 padding: EdgeInsets.all(16.w),
                 child: Column(
                   children: [
-                    Text("Last Night Summary", style: TextStyle(fontSize: 18.sp)),
+                    Text(
+                      "Last Night Summary",
+                      style: TextStyle(fontSize: 18.sp),
+                    ),
                     SizedBox(height: 8.h),
-                    Text("Total Sleep: ${data.totalSleep.inHours}h ${data.totalSleep.inMinutes % 60}m"),
-                    Text("Snore Duration: ${data.snoreDuration.inHours}h ${data.snoreDuration.inMinutes % 60}m"),
+                    Text(
+                      "Total Sleep: ${data.totalSleep.inHours}h ${data.totalSleep.inMinutes % 60}m",
+                    ),
+                    Text(
+                      "Snore Duration: ${data.snoreDuration.inHours}h ${data.snoreDuration.inMinutes % 60}m",
+                    ),
                     Text("Avg dB: ${data.avgDb} | Max dB: ${data.maxDb}"),
                   ],
                 ),
@@ -48,11 +56,14 @@ class HomeScreen extends ConsumerWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         onTap: (index) {
-          if (index == 1) context.go('/mesh-wave');
+          if (index == 1) context.go('/journal');
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
+          ),
         ],
       ),
     );
